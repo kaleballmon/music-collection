@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("/records.json").then(response => response.json()).then(records => {
+    fetch("./records.json").then(response => response.json()).then(records => {
         const sortedRecords = records.sort((a, b) => b.title - a.title)
 
         renderRecords(sortedRecords);
