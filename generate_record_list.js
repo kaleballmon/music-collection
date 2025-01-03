@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         renderRecords(sortedRecords);
 
         const fuse = new Fuse(records, {
-            keys: ['title'],
+            keys: ["title", "artist"],
             threshold: 0.3,
         });
 
@@ -23,8 +23,10 @@ const renderRecords = (records) => {
     list.innerHTML = '';
 
     records.forEach(record => {
+        const artistText = record.artist ? ` by ${record.artist}` : '';
+
         const li = document.createElement('li');
-        li.textContent = record.title; // Adjust to match your JSON structure
+        li.textContent = record.title + artistText;
         list.appendChild(li);
     });
 }
