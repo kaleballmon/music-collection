@@ -1,10 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
     fetch("./records.json").then(response => response.json()).then(records => {
-        const sortedRecords = records.sort((a, b) => b.title - a.title)
+        const recordsWithArtist = records.filter(record => record.artist);
+        const recordsWithNoArtist = records.filter(record => !record.artist);
+
+        const sortedRecordsWithArtist = recordsWithArtist.sort((a, b) => a.artist.localeCompare(b.artist)
+                || a.title.localeCompare(b.title)
+        );
+        const sortedRecordsWithNoArtist = recordsWithNoArtist.sort((a, b) => a.title.localeCompare(b.title));
+
+        const sortedRecords = [...sortedRecordsWithArtist, ...sortedRecordsWithNoArtist];
+
 
         renderRecords(sortedRecords);
 
-        const fuse = new Fuse(records, {
+        const fuse = new Fuse(sortedRecords, {
             keys: ["title", "artist"],
             threshold: 0.3,
         });
