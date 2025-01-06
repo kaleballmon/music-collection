@@ -47,16 +47,26 @@ const renderRecords = (records) => {
         const artistText = record.artist ? ` by ${record.artist}` : "";
 
         const li = document.createElement("li");
+        const img = document.createElement("img");
+        img.width = "150";
+        img.height = "150";
+
+        img.src = record.image ? record.image : "./assets/red.png";
 
         if (record.link) {
             const a = document.createElement("a");
             a.href = record.link;
             a.target = "_blank";
-            a.textContent = record.title + artistText;
+            a.appendChild(img);
             li.appendChild(a);
         } else {
-            li.textContent = record.title + artistText;
+            li.appendChild(img);
         }
+
+        const p = document.createElement("p");
+        p.textContent = record.title + artistText;
+
+        li.appendChild(p);
         list.appendChild(li);
     });
 };

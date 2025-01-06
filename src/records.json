@@ -218,5 +218,11 @@
     { "title": "Look To The Rainbow", "artist": "Astrud Gilberto" },
     { "title": "Release Yourself", "artist": "Graham Central Station" },
     { "title": "Maggot Brain", "artist": "Funkadelic" },
-    { "title": "99.9%", "artist": "Kaytranada" }
+    { "title": "99.9%", "artist": "Kaytranada" },
+    {
+        "title": "Somethin' Else",
+        "artist": "Cannonball Adderley",
+        "link": "https://en.wikipedia.org/wiki/Somethin%27_Else_%28Cannonball_Adderley_album%29",
+        "image": "./assets/somethin_else.jpg"
+    }
 ]
