@@ -47,7 +47,16 @@ const renderRecords = (records) => {
         const artistText = record.artist ? ` by ${record.artist}` : "";
 
         const li = document.createElement("li");
-        li.textContent = record.title + artistText;
+
+        if (record.link) {
+            const a = document.createElement("a");
+            a.href = record.link;
+            a.target = "_blank";
+            a.textContent = record.title + artistText;
+            li.appendChild(a);
+        } else {
+            li.textContent = record.title + artistText;
+        }
         list.appendChild(li);
     });
 };

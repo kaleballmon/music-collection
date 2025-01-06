@@ -1,6 +1,14 @@
 [
-    { "title": "Control", "artist": "Janet Jackson" },
-    { "title": "The Impulse Years", "artist": "Milt Jackson" },
+    {
+        "title": "Control",
+        "artist": "Janet Jackson",
+        "link": "https://en.wikipedia.org/wiki/Control_(Janet_Jackson_album)"
+    },
+    {
+        "title": "The Impulse Years",
+        "artist": "Milt Jackson",
+        "link": "https://www.discogs.com/master/915725-Milt-Jackson-The-Impulse-Years"
+    },
     { "title": "Live At The Amsterdam Paradiso", "artist": "Dexter Gordon" },
     { "title": "And The Anonymous Nobody", "artist": "De La Soul" },
     { "title": "Raise!", "artist": "Earth, Wind & Fire" },
